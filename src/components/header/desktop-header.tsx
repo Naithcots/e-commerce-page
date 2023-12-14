@@ -1,7 +1,14 @@
+import { AnimatePresence } from "framer-motion";
 import navLinks from "../../data/navLinks";
 import Container from "../container";
+import Cart from "./cart/cart";
 
-const DesktopHeader = () => {
+type DesktopHeaderProps = {
+  isCartOpen: boolean;
+  toggleCartOpen: () => void;
+};
+
+const DesktopHeader = ({ isCartOpen, toggleCartOpen }: DesktopHeaderProps) => {
   return (
     <Container>
       <div className="hidden md:flex py-6 items-center gap-x-10 border-b bg-neutral-white">
@@ -26,13 +33,25 @@ const DesktopHeader = () => {
           </nav>
         </div>
 
-        <button className="group">
-          <img
-            src="/images/icon-cart.svg"
-            alt="cart-icon"
-            className="filter group-hover:brightness-0"
-          />
-        </button>
+        <div className="relative">
+          <button onClick={toggleCartOpen} className="group">
+            <img
+              src="/images/icon-cart.svg"
+              alt="cart-icon"
+              className={`filter group-hover:brightness-0 ${
+                isCartOpen ? "brightness-0" : ""
+              }`}
+            />
+          </button>
+
+          <AnimatePresence>
+            {isCartOpen && (
+              <div className="absolute right-0 mt-2 min-w-[325px]">
+                <Cart />
+              </div>
+            )}
+          </AnimatePresence>
+        </div>
 
         <img
           src="/images/image-avatar.png"
