@@ -1,14 +1,17 @@
 import { useState } from "react";
+import useCart from "../../hooks/useCart";
 
 const ProductDetails = () => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
   const decrement = () => setQuantity(quantity - 1);
   const increment = () => setQuantity(quantity + 1);
 
   const inputRange = (
     <div className="h-12 lg:h-full px-2 grid grid-cols-[32px_auto_32px] items-center rounded-md bg-neutral-light-grayish-blue">
       <button
-        disabled={quantity === 0}
+        disabled={quantity === 1}
         onClick={decrement}
         className="w-full h-full grid place-items-center disabled:filter disabled:brightness-0 group"
       >
@@ -59,7 +62,10 @@ const ProductDetails = () => {
         </div>
         <div className="mt-4 lg:mt-6 grid gap-4 lg:grid-cols-[.6fr_1fr] lg:gap-6">
           {inputRange}
-          <button className="p-4 w-full flex justify-center items-center gap-3 rounded-md font-bold text-neutral-white bg-primary-orange hover:filter hover:brightness-110">
+          <button
+            onClick={() => addToCart({ id: 0, qty: quantity })}
+            className="p-4 w-full flex justify-center items-center gap-3 rounded-md font-bold text-neutral-white bg-primary-orange hover:filter hover:brightness-110"
+          >
             <img
               src="/images/icon-cart.svg"
               alt="add-to-cart-icon"

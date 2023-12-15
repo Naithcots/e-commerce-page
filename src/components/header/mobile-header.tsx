@@ -1,8 +1,9 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import MobileMenu from "./mobile-menu";
+import CartButton from "./cart-button";
 import Cart from "./cart/cart";
+import MobileMenu from "./mobile-menu";
 
 type MobileHeaderProps = {
   isCartOpen: boolean;
@@ -11,6 +12,7 @@ type MobileHeaderProps = {
 
 const MobileHeader = ({ isCartOpen, toggleCartOpen }: MobileHeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
@@ -39,15 +41,7 @@ const MobileHeader = ({ isCartOpen, toggleCartOpen }: MobileHeaderProps) => {
         <img src="/images/logo.svg" alt="logo" />
       </div>
 
-      <button onClick={toggleCartOpen} className="group">
-        <img
-          src="/images/icon-cart.svg"
-          alt="cart-icon"
-          className={`filter group-hover:brightness-0 ${
-            isCartOpen ? "brightness-0" : ""
-          }`}
-        />
-      </button>
+      <CartButton isCartOpen={isCartOpen} onClick={toggleCartOpen} />
 
       <img
         src="/images/image-avatar.png"

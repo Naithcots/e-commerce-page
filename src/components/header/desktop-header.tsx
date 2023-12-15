@@ -1,6 +1,8 @@
 import { AnimatePresence } from "framer-motion";
 import navLinks from "../../data/navLinks";
+import useCart from "../../hooks/useCart";
 import Container from "../container";
+import CartButton from "./cart-button";
 import Cart from "./cart/cart";
 
 type DesktopHeaderProps = {
@@ -9,6 +11,9 @@ type DesktopHeaderProps = {
 };
 
 const DesktopHeader = ({ isCartOpen, toggleCartOpen }: DesktopHeaderProps) => {
+  const cart = useCart((state) => state.cart);
+  const quantity = cart.reduce((prev, curr) => prev + curr.qty, 0);
+
   return (
     <Container>
       <div className="hidden md:flex py-6 items-center gap-x-10 border-b bg-neutral-white">
@@ -34,19 +39,10 @@ const DesktopHeader = ({ isCartOpen, toggleCartOpen }: DesktopHeaderProps) => {
         </div>
 
         <div className="relative">
-          <button onClick={toggleCartOpen} className="group">
-            <img
-              src="/images/icon-cart.svg"
-              alt="cart-icon"
-              className={`filter group-hover:brightness-0 ${
-                isCartOpen ? "brightness-0" : ""
-              }`}
-            />
-          </button>
-
+          <CartButton isCartOpen={isCartOpen} onClick={toggleCartOpen} />
           <AnimatePresence>
             {isCartOpen && (
-              <div className="absolute right-0 mt-2 min-w-[325px]">
+              <div className="absolute right-0 mt-2 min-w-[400px]">
                 <Cart />
               </div>
             )}
