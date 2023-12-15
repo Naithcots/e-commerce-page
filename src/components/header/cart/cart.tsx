@@ -6,7 +6,7 @@ const Cart = () => {
       initial={{ scaleY: 0, opacity: 0 }}
       animate={{ scaleY: 1, opacity: 1 }}
       exit={{ scaleY: 0, opacity: 0 }}
-      className="rounded-md shadow-md bg-neutral-white"
+      className="relative rounded-md shadow-md bg-neutral-white z-10"
     >
       <div className="border-b">
         <p className="p-5 font-bold">Cart</p>

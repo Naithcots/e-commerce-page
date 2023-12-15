@@ -14,20 +14,20 @@ const MobileMenu = ({ isOpen, closeMenu }: MobileMenuProps) => {
         initial={{ opacity: 0 }}
         animate={isOpen && { opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="w-full h-full bg-neutral-black/50 backdrop-brightness-75 cursor-pointer z-50"
+        className="w-full h-full bg-neutral-black/50 backdrop-brightness-75 cursor-pointer"
       />
     );
   };
 
   return (
-    <div className="fixed inset-0">
+    <div className="fixed inset-0 z-50">
       <MobileMenuOverlay />
       <motion.div
         initial={{ x: "-100%" }}
         animate={isOpen && { x: 0 }}
         exit={{ x: "-100%" }}
         transition={{ type: "keyframes" }}
-        className="fixed top-0 w-2/3 h-full p-6 bg-neutral-white z-[60]"
+        className="fixed top-0 w-2/3 h-full p-6 bg-neutral-white"
       >
         <button className="group" onClick={closeMenu}>
           <img

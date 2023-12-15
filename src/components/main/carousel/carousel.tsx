@@ -8,7 +8,7 @@ const Carousel = () => {
         <MobileCarousel />
       </div>
       <div className="hidden md:block">
-        <DesktopCarousel />
+        <DesktopCarousel mode="desktop" />
       </div>
     </>
   );
