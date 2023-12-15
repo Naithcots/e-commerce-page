@@ -59,14 +59,14 @@ const DesktopCarousel = ({ mode }: DesktopCarouselProps) => {
           <button
             onClick={() => swiper?.slideTo(idx)}
             key={idx}
-            className={`rounded-xl border-primary-orange ${
+            className={`group rounded-xl border-primary-orange ${
               idx === activeSlideIdx ? "border-2" : ""
             }`}
           >
             <img
               src={item.imageSrc}
               className={`rounded-lg transition-opacity ${
-                idx === activeSlideIdx ? "opacity-40" : ""
+                idx === activeSlideIdx ? "opacity-40" : "group-hover:opacity-70"
               }`}
             />
           </button>

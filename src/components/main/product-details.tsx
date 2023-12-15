@@ -10,13 +10,24 @@ const ProductDetails = () => {
       <button
         disabled={quantity === 0}
         onClick={decrement}
-        className="justify-self-center"
+        className="w-full h-full grid place-items-center disabled:filter disabled:brightness-0 group"
       >
-        <img src="/images/icon-minus.svg" alt="minus-quantity-icon" />
+        <img
+          src="/images/icon-minus.svg"
+          alt="minus-quantity-icon"
+          className="group-hover:filter group-hover:brightness-125"
+        />
       </button>
       <span className="text-center font-bold">{quantity}</span>
-      <button onClick={increment} className="justify-self-center">
-        <img src="/images/icon-plus.svg" alt="plus-quantity-icon" />
+      <button
+        onClick={increment}
+        className="w-full h-full grid place-items-center group"
+      >
+        <img
+          src="/images/icon-plus.svg"
+          alt="plus-quantity-icon"
+          className="group-hover:filter group-hover:brightness-125"
+        />
       </button>
     </div>
   );
@@ -48,7 +59,7 @@ const ProductDetails = () => {
         </div>
         <div className="mt-4 lg:mt-6 grid gap-4 lg:grid-cols-[.6fr_1fr] lg:gap-6">
           {inputRange}
-          <button className="p-4 w-full flex justify-center items-center gap-3 rounded-md font-bold text-neutral-white bg-primary-orange">
+          <button className="p-4 w-full flex justify-center items-center gap-3 rounded-md font-bold text-neutral-white bg-primary-orange hover:filter hover:brightness-110">
             <img
               src="/images/icon-cart.svg"
               alt="add-to-cart-icon"
