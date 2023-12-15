@@ -7,7 +7,7 @@ const App = () => {
     <main>
       <Container>
         <Carousel />
-        {/* <ProductDetails /> */}
+        <ProductDetails />
       </Container>
     </main>
   );
