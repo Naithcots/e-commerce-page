@@ -37,7 +37,7 @@ const ProductDetails = () => {
 
   return (
     <section>
-      <div className="p-6">
+      <div>
         <h2 className="text-primary-orange font-bold uppercase">
           Sneaker Company
         </h2>

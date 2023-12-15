@@ -1,6 +1,5 @@
 import { AnimatePresence } from "framer-motion";
 import navLinks from "../../data/navLinks";
-import useCart from "../../hooks/useCart";
 import Container from "../container";
 import CartButton from "./cart-button";
 import Cart from "./cart/cart";
@@ -11,9 +10,6 @@ type DesktopHeaderProps = {
 };
 
 const DesktopHeader = ({ isCartOpen, toggleCartOpen }: DesktopHeaderProps) => {
-  const cart = useCart((state) => state.cart);
-  const quantity = cart.reduce((prev, curr) => prev + curr.qty, 0);
-
   return (
     <Container>
       <div className="hidden md:flex py-6 items-center gap-x-10 border-b bg-neutral-white">
