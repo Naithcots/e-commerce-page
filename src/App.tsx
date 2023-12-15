@@ -6,8 +6,10 @@ const App = () => {
   return (
     <main>
       <Container>
-        <Carousel />
-        <ProductDetails />
+        <div className="md:mt-12 md:grid grid-cols-2 items-center gap-6">
+          <Carousel />
+          <ProductDetails />
+        </div>
       </Container>
     </main>
   );
