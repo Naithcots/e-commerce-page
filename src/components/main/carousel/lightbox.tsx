@@ -23,7 +23,7 @@ const Lightbox = ({ onClose }: LightboxProps) => {
   );
 
   return (
-    <div className="fixed inset-0 z-40">
+    <div className="fixed inset-0 z-40 hidden md:block">
       {overlay}
       <div className="relative w-full h-full flex justify-center items-center z-50">
         <div className="max-w-xl">

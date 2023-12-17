@@ -20,7 +20,7 @@ const MobileMenu = ({ isOpen, closeMenu }: MobileMenuProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50">
+    <div className="fixed inset-0 z-50 md:hidden">
       <MobileMenuOverlay />
       <motion.div
         initial={{ x: "-100%" }}
