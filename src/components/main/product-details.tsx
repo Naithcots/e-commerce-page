@@ -16,7 +16,7 @@ const ProductDetails = () => {
         className="w-full h-full grid place-items-center disabled:filter disabled:brightness-0 group"
       >
         <img
-          src="/images/icon-minus.svg"
+          src={`${import.meta.env.BASE_URL}/images/icon-minus.svg`}
           alt="minus-quantity-icon"
           className="group-hover:filter group-hover:brightness-125"
         />
@@ -27,7 +27,7 @@ const ProductDetails = () => {
         className="w-full h-full grid place-items-center group"
       >
         <img
-          src="/images/icon-plus.svg"
+          src={`${import.meta.env.BASE_URL}/images/icon-plus.svg`}
           alt="plus-quantity-icon"
           className="group-hover:filter group-hover:brightness-125"
         />
@@ -67,7 +67,7 @@ const ProductDetails = () => {
             className="p-4 w-full flex justify-center items-center gap-3 rounded-md font-bold text-neutral-white bg-primary-orange hover:filter hover:brightness-110"
           >
             <img
-              src="/images/icon-cart.svg"
+              src={`${import.meta.env.BASE_URL}/images/icon-cart.svg`}
               alt="add-to-cart-icon"
               className="filter brightness-0 invert"
             />

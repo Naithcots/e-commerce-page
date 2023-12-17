@@ -22,8 +22,8 @@ const SlideButton = ({ variant, mode, onClick }: SlideButtonProps) => {
       <img
         src={`${
           variant === "prev"
-            ? "/images/icon-previous.svg"
-            : "/images/icon-next.svg"
+            ? `${import.meta.env.BASE_URL}/images/icon-previous.svg`
+            : `${import.meta.env.BASE_URL}/images/icon-next.svg`
         } `}
         width={10}
       />

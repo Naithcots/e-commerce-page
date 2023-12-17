@@ -31,7 +31,7 @@ const MobileMenu = ({ isOpen, closeMenu }: MobileMenuProps) => {
       >
         <button className="group" onClick={closeMenu}>
           <img
-            src="/images/icon-close.svg"
+            src={`${import.meta.env.BASE_URL}/images/icon-close.svg`}
             alt="close-mobile-menu-icon"
             className="group-hover:filter group-hover:brightness-0"
           />

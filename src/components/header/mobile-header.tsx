@@ -20,7 +20,7 @@ const MobileHeader = ({ isCartOpen, toggleCartOpen }: MobileHeaderProps) => {
     <div className="md:hidden px-5 py-3 relative flex items-center gap-x-4 bg-neutral-white">
       <button className="group" onClick={toggleMobileMenu}>
         <img
-          src="/images/icon-menu.svg"
+          src={`${import.meta.env.BASE_URL}/images/icon-menu.svg`}
           alt="menu-icon"
           className="group-hover:filter group-hover:brightness-0"
         />
@@ -38,13 +38,13 @@ const MobileHeader = ({ isCartOpen, toggleCartOpen }: MobileHeaderProps) => {
       </button>
 
       <div className="grow">
-        <img src="/images/logo.svg" alt="logo" />
+        <img src={`${import.meta.env.BASE_URL}/images/logo.svg`} alt="logo" />
       </div>
 
       <CartButton isCartOpen={isCartOpen} onClick={toggleCartOpen} />
 
       <img
-        src="/images/image-avatar.png"
+        src={`${import.meta.env.BASE_URL}/images/image-avatar.png`}
         alt="user-avatar"
         width={28}
         className="rounded-full hover:border-2 border-primary-orange cursor-pointer"

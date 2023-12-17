@@ -34,7 +34,7 @@ const DesktopCarousel = ({ mode }: DesktopCarouselProps) => {
               onClick={() => mode === "desktop" && openLightbox()}
               key={idx}
             >
-              <img src={item.imageSrc} className="rounded-xl" />
+              <img src={`${import.meta.env.BASE_URL}${item.imageSrc}`} className="rounded-xl" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -64,7 +64,7 @@ const DesktopCarousel = ({ mode }: DesktopCarouselProps) => {
             }`}
           >
             <img
-              src={item.imageSrc}
+              src={`${import.meta.env.BASE_URL}${item.imageSrc}`}
               className={`rounded-lg transition-opacity ${
                 idx === activeSlideIdx ? "opacity-40" : "group-hover:opacity-70"
               }`}

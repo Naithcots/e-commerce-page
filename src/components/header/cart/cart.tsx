@@ -29,7 +29,7 @@ const Cart = () => {
                 className="flex items-center gap-4"
               >
                 <img
-                  src={product.data.image}
+                  src={`${import.meta.env.BASE_URL}${product.data.image}`}
                   alt="product-image"
                   width={56}
                   height={56}
@@ -51,7 +51,7 @@ const Cart = () => {
                 </div>
                 <button onClick={() => deleteFromCart(product.cartItem.id)}>
                   <img
-                    src="/images/icon-delete.svg"
+                    src={`${import.meta.env.BASE_URL}/images/icon-delete.svg`}
                     alt="delete-from-cart-icon"
                   />
                 </button>

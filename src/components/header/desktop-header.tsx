@@ -14,7 +14,7 @@ const DesktopHeader = ({ isCartOpen, toggleCartOpen }: DesktopHeaderProps) => {
     <Container>
       <div className="hidden md:flex py-6 items-center gap-x-10 border-b bg-neutral-white">
         <div>
-          <img src="/images/logo.svg" alt="logo" />
+          <img src={`${import.meta.env.BASE_URL}/images/logo.svg`} alt="logo" />
         </div>
 
         <div className="grow">
@@ -46,7 +46,7 @@ const DesktopHeader = ({ isCartOpen, toggleCartOpen }: DesktopHeaderProps) => {
         </div>
 
         <img
-          src="/images/image-avatar.png"
+          src={`${import.meta.env.BASE_URL}/images/image-avatar.png`}
           alt="user-avatar"
           width={36}
           className="rounded-full hover:border-2 border-primary-orange cursor-pointer"

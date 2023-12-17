@@ -12,7 +12,7 @@ const MobileCarousel = () => {
       <Swiper loop={true} onSwiper={setSwiper}>
         {productImages.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <img src={item.imageSrc} />
+            <img src={`${import.meta.env.BASE_URL}${item.imageSrc}`} />
           </SwiperSlide>
         ))}
       </Swiper>

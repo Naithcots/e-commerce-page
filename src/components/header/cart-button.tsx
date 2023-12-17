@@ -26,7 +26,7 @@ const CartButton = ({ isCartOpen, onClick }: CartButtonProps) => {
         )}
       </AnimatePresence>
       <img
-        src="/images/icon-cart.svg"
+        src={`${import.meta.env.BASE_URL}/images/icon-cart.svg`}
         alt="cart-icon"
         className={`filter group-hover:brightness-0 ${
           isCartOpen ? "brightness-0" : ""
